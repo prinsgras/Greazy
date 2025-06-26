@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greazy</title>
+  <style>
+    @font-face {
+      font-family: 'zing_rust_demobase';
+      src: url('http://greazy.nl//fonts/zingrustdemo-base-webfont.eot');
+      src: url('http://greazy.nl//fonts/zingrustdemo-base-webfont.eot?#iefix') format('embedded-opentype'),
+           url('http://greazy.nl//fonts/zingrustdemo-base-webfont.woff2') format('woff2'),
+           url('http://greazy.nl/fonts/zingrustdemo-base-webfont.woff') format('woff'),
+           url('http://greazy.nl/fonts/zingrustdemo-base-webfont.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'zing_rust_demoshadow1';
+      src: url('http://greazy.nl/fonts/zingrustdemo-sh1-webfont.eot');
+      src: url('http://greazy.nl/fonts/zingrustdemo-sh1-webfont.eot?#iefix') format('embedded-opentype'),
+           url('http://greazy.nl/fonts/zingrustdemo-sh1-webfont.woff2') format('woff2'),
+           url('http://greazy.nl/fonts/zingrustdemo-sh1-webfont.woff') format('woff'),
+           url('http://greazy.nl/fonts/zingrustdemo-sh1-webfont.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+
+    body {
+      background-image: url(http://greazy.nl/Greazy-Background.jpg);
+      background-repeat-y: repeat;
+    }
+
+    .container {
+      width: 50vw;
+      margin: 0 auto;
+      background: #53d5e1;
+      display: flex;
+      flex-direction: column;
+      margin-top: 6vh !important;
+      align-items: center;
+      border-radius: 10px;
+    }
+
+    img.lady.reponsive {
+      width: 40%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    .pijl {
+      background-image: url(http://greazy.nl/pijltje.png);
+      background-size: 200px;
+      display: flex;
+      width: 280px;
+      height: 180px;
+      background-repeat: no-repeat;
+      justify-content: center;
+      align-items: center;
+      margin-top: -15px;
+      background-position: 35px;
+    }
+
+    a {
+      font-size: 1.75em !important;
+      position: relative;
+      left: 0;
+      top: 0px;
+      font-family: zing_rust_demobase;
+      color: #53d5e1 !important;
+      text-decoration: none;
+    }
+
+    .adres {
+      margin-top: -20px;
+      margin-bottom: 20px;
+    }
+
+    .adres p {
+      padding: 0;
+      margin: 0;
+      display: block;
+      text-align: center;
+      line-height: 1.25;
+      font-family: zing_rust_demobase;
+      color: white !important;
+    }
+
+    .adres p a {
+      font-family: zing_rust_demobase;
+      color: white !important;
+    }
+
+    a.mail {
+      font-size: 15px !important;
+    }
+
+    span {
+      color: white !important;
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social img {
+      width: 25px;
+    }
+
+    iframe {
+      height: 100vh;
+      width: 100%;
+    }
+
+    @media (max-width: 767.98px) {
+      .container {
+        width: 90vw;
+      }
+
+      img.lady.reponsive {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="http://greazy.nl/lady.png" class="lady reponsive" alt="Greazy logo" />
+
+    <!-- Updated Menu Kaart button -->
+    <div class="pijl">
+      <a href="https://butlaroo.app/place/9Q7dQ" target="_blank">Menu Kaart</a>
+    </div>
+
+    <!-- Greazy Videos button -->
+    <div class="pijl">
+      <a href="https://prinsgras.github.io/333333/" target="_blank">Greazy Videos</a>
+    </div>
+
+    <div class="adsoc">
+      <div class="adres">
+        <p>
+          Overtoom 344 | 1054 JG | Amsterdam<br />
+          <a href="tel:0031687235684" style="color:black !important;">06 87 23 56 84</a><br />
+          <a href="mailto:info@greazy.nl" class="mail">Mail ons: info@greazy.nl</a>
+        </p>
+      </div>
+
+      <div class="socialbuiten">
+        <div class="social">
+          <a href="https://www.facebook.com/greazy020/" target="_blank"><img src="http://greazy.nl/facebook.png" alt="Facebook"></a>
+          <a href="https://www.instagram.com/greazy020/" target="_blank"><img src="http://greazy.nl/insta.png" alt="Instagram"></a>
+          <a href="https://www.snapchat.com/add/greazy020" target="_blank"><img src="http://greazy.nl/snapchat.png" alt="Snapchat"></a>
+        </div>
+      </div>
+    </div>
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2436.574099597897!2d4.8680679!3d52.3600094!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5e209da96ac83%3A0x6183bd1ed6dbef05!2sGreazy!5e0!3m2!1sen!2snl!4v1606773158515!5m2!1sen!2snl"
+      width="800"
+      height="600"
+      frameborder="0"
+      style="border:0;"
+      allowfullscreen=""
+      aria-hidden="false"
+      tabindex="0">
+    </iframe>
+  </div>
+</body>
+</html>
