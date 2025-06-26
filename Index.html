@@ -3,100 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Greazy</title>
+  <title>Greazy - Floating Food with Logo in Social</title>
   <style>
-    @font-face {
-      font-family: 'zing_rust_demobase';
-      src: url('./assets/fonts/zingrustdemo-base-webfont.eot');
-      src: url('./assets/fonts/zingrustdemo-base-webfont.eot?#iefix') format('embedded-opentype'),
-           url('./assets/fonts/zingrustdemo-base-webfont.woff2') format('woff2'),
-           url('./assets/fonts/zingrustdemo-base-webfont.woff') format('woff'),
-           url('./assets/fonts/zingrustdemo-base-webfont.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'zing_rust_demoshadow1';
-      src: url('./assets/fonts/zingrustdemo-sh1-webfont.eot');
-      src: url('./assets/fonts/zingrustdemo-sh1-webfont.eot?#iefix') format('embedded-opentype'),
-           url('./assets/fonts/zingrustdemo-sh1-webfont.woff2') format('woff2'),
-           url('./assets/fonts/zingrustdemo-sh1-webfont.woff') format('woff'),
-           url('./assets/fonts/zingrustdemo-sh1-webfont.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
+    /* Basic Reset */
     * {
       box-sizing: border-box;
-    }
-    html, body {
       margin: 0;
       padding: 0;
-      height: 100vh;
     }
-    body {
-      background-image: url('./assets/Greazy-Background.jpg');
+
+    html, body {
+      height: 100vh;
+      background-image: url('http://greazy.nl/Greazy-Background.jpg');
       background-repeat-y: repeat;
       font-family: 'zing_rust_demobase', Arial, sans-serif;
+      overflow-x: hidden;
+      position: relative;
+      color: white;
     }
+
     .container {
       width: 50vw;
       margin: 6vh auto 0 auto;
       background: #53d5e1;
+      border-radius: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+      z-index: 10;
     }
+
     img.lady.responsive {
       width: 40%;
       height: auto;
       margin-top: 20px;
     }
+
+    /* Smaller text in arrows */
     .pijl {
-      background-image: url('./assets/pijltje.png');
-      background-size: 200px;
-      display: flex;
+      background-image: url('http://greazy.nl/pijltje.png');
+      background-size: 180px;
       width: 280px;
       height: 180px;
       background-repeat: no-repeat;
+      display: flex;
       justify-content: center;
       align-items: center;
       margin-top: -15px;
       background-position: 35px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 10px;
     }
+
+    .pijl:hover {
+      background-color: rgba(255,255,255,0.2);
+    }
+
     .pijl a {
-      font-size: 1.75em !important;
       font-family: 'zing_rust_demobase', Arial, sans-serif;
+      font-size: 1.2em; /* smaller text */
       color: #53d5e1 !important;
       text-decoration: none;
+      user-select: none;
     }
+
     .adres {
-      margin: -20px 0 20px 0;
+      margin: 20px 0;
       text-align: center;
-      color: white !important;
       font-family: 'zing_rust_demobase', Arial, sans-serif;
+      color: white;
+      line-height: 1.4;
     }
+
     .adres a {
-      color: white !important;
-      font-family: 'zing_rust_demobase', Arial, sans-serif;
+      color: white;
       text-decoration: underline;
     }
+
     .social {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 15px;
       margin-bottom: 20px;
+      z-index: 10;
+      position: relative;
     }
+
     .social img {
       width: 25px;
+      height: auto;
     }
+
+    .social img.logo {
+      width: 40px;
+      margin-left: 15px;
+      border-radius: 5px;
+    }
+
     iframe {
       width: 100%;
       height: 600px;
       border: 0;
       border-radius: 0 0 10px 10px;
     }
+
     @media (max-width: 767.98px) {
       .container {
         width: 90vw;
@@ -108,11 +122,81 @@
         height: 400px;
       }
     }
+
+    /* Floating Food Animations */
+
+    .floating-food {
+      position: fixed;
+      font-size: 2.5em;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0.8;
+      animation-timing-function: ease-in-out;
+      z-index: 5;
+    }
+
+    /* Different floating animations */
+    @keyframes float1 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-20px) translateX(10px); }
+    }
+
+    @keyframes float2 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(15px) translateX(-15px); }
+    }
+
+    @keyframes float3 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-10px) translateX(-10px); }
+    }
+
+    @keyframes float4 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(25px) translateX(5px); }
+    }
+
+    @keyframes float5 {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-15px) translateX(15px); }
+    }
+
+    /* Position and animate each food icon */
+
+    #icecream {
+      top: 10%;
+      left: 15%;
+      animation: float1 6s infinite;
+    }
+
+    #fries {
+      top: 30%;
+      right: 15%;
+      animation: float2 5.5s infinite;
+    }
+
+    #milkshake {
+      bottom: 25%;
+      left: 10%;
+      animation: float3 6.5s infinite;
+    }
+
+    #pancakes {
+      bottom: 20%;
+      right: 20%;
+      animation: float4 5.7s infinite;
+    }
+
+    #hotdog {
+      top: 50%;
+      left: 50%;
+      animation: float5 6.2s infinite;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="./assets/lady.png" class="lady responsive" alt="Greazy logo" />
+    <img src="http://greazy.nl/lady.png" class="lady responsive" alt="Greazy logo" />
 
     <div class="pijl">
       <a href="https://butlaroo.app/place/9Q7dQ" target="_blank" rel="noopener noreferrer">Menu Kaart</a>
@@ -120,6 +204,10 @@
 
     <div class="pijl">
       <a href="https://prinsgras.github.io/333333/" target="_blank" rel="noopener noreferrer">Greazy Videos</a>
+    </div>
+
+    <div class="pijl">
+      <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c5e209da96ac83:0x6183bd1ed6dbef05?sa=X&ved=1t:8290&ictx=111" target="_blank" rel="noopener noreferrer">Adres</a>
     </div>
 
     <div class="adres">
@@ -131,9 +219,11 @@
     </div>
 
     <div class="social">
-      <a href="https://www.facebook.com/greazy020/" target="_blank" rel="noopener noreferrer"><img src="./assets/facebook.png" alt="Facebook" /></a>
-      <a href="https://www.instagram.com/greazy020/" target="_blank" rel="noopener noreferrer"><img src="./assets/insta.png" alt="Instagram" /></a>
-      <a href="https://www.snapchat.com/add/greazy020" target="_blank" rel="noopener noreferrer"><img src="./assets/snapchat.png" alt="Snapchat" /></a>
+      <a href="https://www.facebook.com/greazy020/" target="_blank" rel="noopener noreferrer"><img src="http://greazy.nl/facebook.png" alt="Facebook" /></a>
+      <a href="https://www.instagram.com/greazy020/" target="_blank" rel="noopener noreferrer"><img src="http://greazy.nl/insta.png" alt="Instagram" /></a>
+      <a href="https://www.snapchat.com/add/greazy020" target="_blank" rel="noopener noreferrer"><img src="http://greazy.nl/snapchat.png" alt="Snapchat" /></a>
+      <!-- Copied logo inside social -->
+      <img src="http://greazy.nl/lady.png" alt="Greazy logo" class="logo" />
     </div>
 
     <iframe
@@ -143,5 +233,12 @@
       tabindex="0"
     ></iframe>
   </div>
+
+  <!-- Floating food icons -->
+  <div id="icecream" class="floating-food" title="Ice Cream">🍦</div>
+  <div id="fries" class="floating-food" title="Fries">🍟</div>
+  <div id="milkshake" class="floating-food" title="Milkshake">🥤</div>
+  <div id="pancakes" class="floating-food" title="Pancakes">🥞</div>
+  <div id="hotdog" class="floating-food" title="Hotdog">🌭</div>
 </body>
 </html>
