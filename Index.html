@@ -1,244 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Greazy - Floating Food with Logo in Social</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quinn is 2 Jaar - Wordt Binnenkort 3!</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;500&family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+
   <style>
-    /* Basic Reset */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html, body {
-      height: 100vh;
-      background-image: url('http://greazy.nl/Greazy-Background.jpg');
-      background-repeat-y: repeat;
-      font-family: 'zing_rust_demobase', Arial, sans-serif;
-      overflow-x: hidden;
+    .responsive-video {
       position: relative;
-      color: white;
-    }
-
-    .container {
-      width: 50vw;
-      margin: 6vh auto 0 auto;
-      background: #53d5e1;
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      position: relative;
-      z-index: 10;
-    }
-
-    img.lady.responsive {
-      width: 40%;
-      height: auto;
-      margin-top: 20px;
-    }
-
-    /* Smaller text in arrows */
-    .pijl {
-      background-image: url('http://greazy.nl/pijltje.png');
-      background-size: 180px;
-      width: 280px;
-      height: 180px;
-      background-repeat: no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: -15px;
-      background-position: 35px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      border-radius: 10px;
-    }
-
-    .pijl:hover {
-      background-color: rgba(255,255,255,0.2);
-    }
-
-    .pijl a {
-      font-family: 'zing_rust_demobase', Arial, sans-serif;
-      font-size: 1.2em; /* smaller text */
-      color: #53d5e1 !important;
-      text-decoration: none;
-      user-select: none;
-    }
-
-    .adres {
-      margin: 20px 0;
-      text-align: center;
-      font-family: 'zing_rust_demobase', Arial, sans-serif;
-      color: white;
-      line-height: 1.4;
-    }
-
-    .adres a {
-      color: white;
-      text-decoration: underline;
-    }
-
-    .social {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 20px;
-      z-index: 10;
-      position: relative;
-    }
-
-    .social img {
-      width: 25px;
-      height: auto;
-    }
-
-    .social img.logo {
-      width: 40px;
-      margin-left: 15px;
-      border-radius: 5px;
-    }
-
-    iframe {
       width: 100%;
-      height: 600px;
-      border: 0;
-      border-radius: 0 0 10px 10px;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 1rem;
     }
-
-    @media (max-width: 767.98px) {
-      .container {
-        width: 90vw;
-      }
-      img.lady.responsive {
-        width: 90%;
-      }
-      iframe {
-        height: 400px;
-      }
-    }
-
-    /* Floating Food Animations */
-
-    .floating-food {
-      position: fixed;
-      font-size: 2.5em;
-      user-select: none;
-      pointer-events: none;
-      opacity: 0.8;
-      animation-timing-function: ease-in-out;
-      z-index: 5;
-    }
-
-    /* Different floating animations */
-    @keyframes float1 {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(-20px) translateX(10px); }
-    }
-
-    @keyframes float2 {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(15px) translateX(-15px); }
-    }
-
-    @keyframes float3 {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(-10px) translateX(-10px); }
-    }
-
-    @keyframes float4 {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(25px) translateX(5px); }
-    }
-
-    @keyframes float5 {
-      0%, 100% { transform: translateY(0) translateX(0); }
-      50% { transform: translateY(-15px) translateX(15px); }
-    }
-
-    /* Position and animate each food icon */
-
-    #icecream {
-      top: 10%;
-      left: 15%;
-      animation: float1 6s infinite;
-    }
-
-    #fries {
-      top: 30%;
-      right: 15%;
-      animation: float2 5.5s infinite;
-    }
-
-    #milkshake {
-      bottom: 25%;
-      left: 10%;
-      animation: float3 6.5s infinite;
-    }
-
-    #pancakes {
-      bottom: 20%;
-      right: 20%;
-      animation: float4 5.7s infinite;
-    }
-
-    #hotdog {
-      top: 50%;
-      left: 50%;
-      animation: float5 6.2s infinite;
+    .responsive-video iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+      border-radius: 12px;
     }
   </style>
 </head>
 <body>
+
+<section class="section-padding bg-light-blue" id="dagje-uit">
   <div class="container">
-    <img src="http://greazy.nl/lady.png" class="lady responsive" alt="Greazy logo" />
-
-    <div class="pijl">
-      <a href="https://butlaroo.app/place/9Q7dQ" target="_blank" rel="noopener noreferrer">Menu Kaart</a>
+    <h2 class="section-title">Quinn Groeit en Speelt</h2>
+    <p class="section-subtitle">Onze kleine jongen wordt zo groot!</p>
+    <div class="row">
+      <div class="col-lg-6 mb-4">
+        <div class="story-card">
+          <h3><i class="fas fa-playground me-2"></i>Rennen, Springen en Spelen</h3>
+          <p>Quinn houdt zo van spelen! Hij rent door de speelhal, springt in de glijbaan en klimt overal op.</p>
+          <div class="responsive-video">
+            <iframe src="https://drive.google.com/file/d/1-_dyoYXj1F2Tt4x7ffYQFt7N0eyKSQ8D/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+          <div class="photo-grid d-flex flex-wrap gap-2">
+            <a href="assets/Photos/IMG-20250528-WA0005.jpg" data-lightbox="dagje-uit"><img src="assets/Photos/IMG-20250528-WA0005.jpg" alt="Rennen" class="img-fluid rounded"/></a>
+            <a href="assets/Photos/IMG-20250528-WA0006.jpg" data-lightbox="dagje-uit"><img src="assets/Photos/IMG-20250528-WA0006.jpg" alt="Springen" class="img-fluid rounded"/></a>
+            <a href="assets/Photos/20250629_011139.jpg" data-lightbox="dagje-uit"><img src="assets/Photos/IMG-20250530-WA0005.jpg" alt="Spelen" class="img-fluid rounded"/></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-4">
+        <div class="story-card">
+          <h3><i class="fas fa-utensils me-2"></i>Groot Worden</h3>
+          <p>Quinn wordt elke dag een beetje groter! Hij eet nu zelf aan tafel en kan al zoveel.</p>
+          <div class="responsive-video">
+            <iframe src="https://drive.google.com/file/d/1--RtinCyOVvNwmvthDhZG2JcwHcvHH-e/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+          <div class="photo-grid d-flex flex-wrap gap-2">
+            <a href="assets/Photos/IMG-20250530-WA0008.jpg" data-lightbox="groot-worden"><img src="assets/Photos/IMG-20250530-WA0008.jpg" alt="Eten" class="img-fluid rounded"/></a>
+            <a href="assets/Photos/IMG-20250603-WA0002.jpg" data-lightbox="groot-worden"><img src="assets/Photos/IMG-20250603-WA0002.jpg" alt="Groei" class="img-fluid rounded"/></a>
+            <a href="assets/Photos/20250629_011139.jpg" data-lightbox="groot-worden"><img src="assets/Photos/IMG-20250603-WA0005.jpg" alt="Trots" class="img-fluid rounded"/></a>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="pijl">
-      <a href="https://prinsgras.github.io/333333/" target="_blank" rel="noopener noreferrer">Greazy Videos</a>
-    </div>
-
-    <div class="pijl">
-      <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47c5e209da96ac83:0x6183bd1ed6dbef05?sa=X&ved=1t:8290&ictx=111" target="_blank" rel="noopener noreferrer">Adres</a>
-    </div>
-
-    <div class="adres">
-      <p>
-        Overtoom 344 | 1054 JG | Amsterdam<br />
-        <a href="tel:0031687235684" style="color:black !important;">06 87 23 56 84</a><br />
-        <a href="mailto:info@greazy.nl" class="mail">Mail ons: info@greazy.nl</a>
-      </p>
-    </div>
-
-    <div class="social">
-      <a href="https://www.facebook.com/greazy020/" target="_blank" rel="noopener noreferrer"><img src="http://greazy.nl/facebook.png" alt="Facebook" /></a>
-      <a href="https://www.instagram.com/greazy020/" target="_blank" rel="noopener noreferrer"><img src="http://greazy.nl/insta.png" alt="Instagram" /></a>
-      <a href="https://www.snapchat.com/add/greazy020" target="_blank" rel="noopener noreferrer"><img src="http://greazy.nl/snapchat.png" alt="Snapchat" /></a>
-      <!-- Copied logo inside social -->
-      <img src="http://greazy.nl/lady.png" alt="Greazy logo" class="logo" />
-    </div>
-
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2436.574099597897!2d4.8680679!3d52.3600094!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5e209da96ac83%3A0x6183bd1ed6dbef05!2sGreazy!5e0!3m2!1sen!2snl!4v1606773158515!5m2!1sen!2snl"
-      allowfullscreen
-      aria-hidden="false"
-      tabindex="0"
-    ></iframe>
   </div>
+</section>
 
-  <!-- Floating food icons -->
-  <div id="icecream" class="floating-food" title="Ice Cream">🍦</div>
-  <div id="fries" class="floating-food" title="Fries">🍟</div>
-  <div id="milkshake" class="floating-food" title="Milkshake">🥤</div>
-  <div id="pancakes" class="floating-food" title="Pancakes">🥞</div>
-  <div id="hotdog" class="floating-food" title="Hotdog">🌭</div>
-</body>
-</html>
+<section class="section-padding bg-light-yellow" id="samen-eten">
+  <div class="container">
+    <h2 class="section-title">Samen met Mama en Papa</h2>
+    <p class="section-subtitle">De mooiste momenten samen</p>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="story-card">
+          <h3><i class="fas fa-heart me-2"></i>Samen Groeien</h3>
+          <p>Quinn groeit elke dag en mama en papa zijn zo trots! Hij speelt met vriendjes, eet samen aan tafel en deelt alles.</p>
+          <div class="responsive-video">
+            <iframe src="https://drive.google.com/file/d/1-_dyoYXj1F2Tt4x7ffYQFt7N0eyKSQ8D/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+          <div class="photo-grid large-grid d-flex flex-wrap gap-2 justify-content-center">
+            <a href="assets/Photos/IMG-20250603-WA0006.jpg" data-lightbox="samen-groeien"><img src="assets/Photos/IMG-20250603-WA0006.jpg" alt="Samen spelen" class="img-fluid rounded"/></a>
+            <a href="assets/Photos/IMG-20250603-WA0039.jpg" data-lightbox="samen-groeien"><img src="assets/Photos/IMG-20250603-WA0039.jpg" alt="Samen eten" class="img-fluid rounded"/></a>
+            <a href="assets/Photos/IMG-20250603-WA0040.jpg" data-lightbox="samen-groeien"><img src="assets/Photos/IMG-20250603-WA0040.jpg" alt="Met mama" class="img-fluid rounded"/></a>
+            <a href="assets/Photos/IMG-20250603-WA0041.jpg" data-lightbox="samen-groeien"><img src="assets/Photos/IMG-20250603-WA0041.jpg" alt="Met papa" class="img-fluid rounded"/></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding bg-light-green" id="spelen">
+  <div class="container">
+    <h2 class="section-title">Spelen &amp; Groeien</h2>
+    <p class="section-subtitle">Quinn's energie en groei</p>
+    <div class="row">
+      <div class="col-lg-6 mb-4">
+        <div class="story-card">
+          <h3><i class="fas fa-running me-2"></i>Rennen en Springen</h3>
+          <p>Quinn houdt van bewegen! Hij rent door de speelhal met zijn vriendjes en springt overal op.</p>
+          <div class="responsive-video">
+            <iframe src="https://drive.google.com/file/d/1-_dyoYXj1F2Tt4x7ffYQFt7N0eyKSQ8D/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+          <div class="photo-grid d-flex flex-wrap gap-2">
+            <a href="assets/Photos/IMG-20250603-WA0042.jpg" data-lightbox="rennen-springen"><img src="assets/Photos/IMG-20250603-WA0042.jpg" alt="Rennen" class="img-fluid rounded"/></a>
+            <a href="assets/Photos/IMG-20250615-WA0000.jpg" data-lightbox="rennen-springen"><img src="assets/Photos/IMG-20250615-WA0000.jpg" alt="Springen" class="img-fluid rounded"/></a>
+            <a href="assets/Photos/IMG-20250615-WA0001.jpg" data-lightbox="rennen-springen"><img src="assets/Photos/IMG-20250615-WA
